@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.google.com/specimen/Roboto+Condensed" rel="stylesheet" type="text/css">
+<style>
+    .indentation {
+        text-indent: 30px;
+    }
+
+    body {
+        font-size: 20px;
+        background-color: #cbf3f9;
+        padding: 20px;
+    }
+
+    .custom-font {
+        font-family: "Roboto Condensed", sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        color: #C26F8A;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: #1B207A;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    ul {
+        padding: 15px;
+        list-style-type: ' ✅ ';
+        border-radius: 10px;
+    }
+
+    #hiddenFunFactDiv {
+        display: none;
+        background-color: #F5F5DC;
+        padding: 15px;
+        border: 2px dashed;
+        border-radius: 20px;
+        margin-top: 50px;
+        font-weight: bold;
+    }
+
+    .Question-section {
+        background-color: #d7f281;
+        padding: 15px;
+        border: 2px dashed;
+        border-radius: 70px;
+        margin-top: 50px;
+    }
+
+    .small-image {
+        width: 500px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .small-image {
+        width: 700px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .yes {
+        background-color: green;
+        cursor: pointer;
+        color: white;
+        border: none;
+        padding: 4px 10px;
+        margin-left: 5px;
+        border-radius: 4px;
+    }
+
+    .no {
+        background-color: red;
+        cursor: pointer;
+        color: white;
+        border: none;
+        padding: 4px 10px;
+        margin-left: 5px;
+        border-radius: 4px;
+    }
+
+    .yes:hover,
+    .no:hover {
+        transform: scale(1.1);
+
+    }
+
+    #toggleBtn {
+        background-color: #0008ff;
+        color: white;
+        font-size: 20px;
+        padding: 20px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    #displaybutton:hover {
+        transform: scale(1.1);
+    }
+
+    #backgroundBtn {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        cursor: pointer;
+        padding: 10px 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+        align-items:left;
+    }
+</style>
+
+<head>
+    <title>
+        My Dream Job
+    </title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+    <h3>Hi there! <br> Welcome to my diaries!</h3>
+    <div>
+
+        <p class="indentation custom-font">As a kid, whenever I heard about any job, I imagined myself doing it. And
+            whenever I watched a movie and saw the hero doing their work, I imagined myself being them. I love the idea
+            of being an important person and doing something that no one else can do.
+        </p>
+    </div>
+    <div>
+        <p class="indentation custom-font">
+            When I reached high school and had to decide what major I should choose, I felt like no! I can't choose just
+            one thing I want to do them all! But unfortunately, that's not how life works.
+            In my last year as a high school student, I decided that I want to be a software engineer. The reasons
+            behind that are
+        </p>
+
+        <ul class="custom-font">
+            <li>I love solving problems</li>
+            <li>I love mathematics</li>
+            <li> I hope I can do something useful using technology</li>
+        </ul>
+
+        <p class="indentation custom-font">
+            I worked so hard to achieve it, and as we know:<b style="color:brown; font-style: italic;"> hard work pays
+                off! </b> Now, I’ve finished my first year as a computer science student. And now, I'm looking forward
+            to working harder and harder to become one of those movie heroes who do things no one else could ever do!
+
+        </p>
+    </div>
+    <p class="indentation custom-font">
+        And one piece of advice I want to share is: try to be an extraordinary person and don’t settle for average. Work
+        hard and smart, and choose the field where you can do your best and shine.
+        May all of us find our dream job someday! ❤️
+
+    </p>
+    <div class="Question-section custom-font">
+        <h3> Questions Section🤔⁉️</h3>
+        <p>
+            <b> Kindly answer the following YES/NO questions:</b>
+        <ol>
+            <li> Do you enjoy learning new things? <button class="yes">yes</button> <button class="no">no</button>
+            </li>
+
+            <li>Would you like to work with computers one day? <button class="yes">yes</button> <button
+                    class="no">no</button></li>
+
+            <li>Do you believe that hard work can make your dreams come true?<button class="yes">yes</button> <button
+                    class="no">no</button></li>
+
+        </ol>
+        </p>
+    </div>
+    <button id="toggleBtn" onclick="toggleDiv()">Click to see a fun fact!</button>
+    <div id="hiddenFunFactDiv">
+
+        <h3> Fun Fact!😁💻🎈</h3>
+        <p class="indentation custom-font">
+            There Are More Computers Than People on Earth!
+            Right now, there are over 10 billion connected devices, while the human population is around 8 billion. That
+            means there are more computers than people in the world!
+        </p>
+        <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fabumk331i3ralm5cplb9.jpg"
+            class="small-image">
+    </div>
+    <div>
+        <button id="backgroundBtn" onclick="changeBackgroundColor()">Change Background Color</button>
+    </div>
+    <script>
+        const sound = new Audio('click.mp3');
+
+        function toggleDiv() {
+            const div = document.getElementById("hiddenFunFactDiv");
+            const button = document.getElementById("toggleBtn");
+
+            if (div.style.display === "none" || div.style.display === "") {
+                div.style.display = "block";
+                button.innerText = "Hide fun fact";
+                sound.play();
+
+            } else {
+                div.style.display = "none";
+                button.innerText = "Click to see a fun fact!";
+            }
+        }
+
+        function changeBackgroundColor() {
+            const colors = ["#F7D8BA", "#FFE7C7", "#E1F8DC", "#F7FBF6", "#BABCDA" , "#cbf3f9"];
+            const randomIndex = Math.floor(Math.random() * colors.length);
+
+
+            document.body.style.backgroundColor = colors[randomIndex];
+        }
+
+        const text = "My Dream Job 👩‍💻";
+        let i = 0;
+
+        function typeTitle() {
+            if (i < text.length) {
+                document.getElementById("heading").textContent += text[i];
+                i++;
+                setTimeout(typeTitle, 200);
+            }
+        }
+
+        typeTitle();
+
+    </script>
+
+</body>
+
+</html>
